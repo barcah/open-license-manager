@@ -1,7 +1,7 @@
 #include <iostream>
 #include <map>
-#include "api/license++.h"
-#include "pc-identifiers.h"
+#include "olm/api/licensepp.h"
+#include "olm/pc-identifiers.h"
 
 using namespace std;
 

@@ -5,14 +5,14 @@ link_directories ( ${Boost_LIBRARY_DIR} )
 
 
 ADD_LIBRARY(
-    license_generator_lib STATIC
+    olm_license_generator_lib STATIC
     license-generator.cpp
 )
 
 target_link_libraries(
-     license_generator_lib
-     tools_base
-     license++_static
+     olm_license_generator_lib
+     olm_tools_base
+     olm_licensepp_static
 	 $<$<CONFIG:Debug>:${Boost_PROGRAM_OPTIONS_LIBRARY_DEBUG}>
      $<$<NOT:$<CONFIG:Debug>>:${Boost_PROGRAM_OPTIONS_LIBRARY_RELEASE}>	 
 	 $<$<CONFIG:Debug>:${Boost_SYSTEM_LIBRARY_DEBUG}>
@@ -21,17 +21,17 @@ target_link_libraries(
 )
 
 add_executable(
- license_generator
+ olm_license_generator
  license-generator-main.cpp
 )
 
 target_link_libraries(
-    license_generator
-    license_generator_lib
+    olm_license_generator
+    olm_license_generator_lib
 )
-add_dependencies( license_generator private_key )
+add_dependencies( olm_license_generator private_key )
 
-install(TARGETS license_generator RUNTIME DESTINATION bin)
+install(TARGETS olm_license_generator RUNTIME DESTINATION tools/olm)
 
-#SET_TARGET_PROPERTIES(license_generator PROPERTIES LINK_SEARCH_START_STATIC ON)
-#SET_TARGET_PROPERTIES(license_generator PROPERTIES LINK_SEARCH_END_STATIC ON)
+#SET_TARGET_PROPERTIES(olm_license_generator PROPERTIES LINK_SEARCH_START_STATIC ON)
+#SET_TARGET_PROPERTIES(olm_license_generator PROPERTIES LINK_SEARCH_END_STATIC ON)

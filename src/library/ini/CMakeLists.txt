@@ -1,9 +1,9 @@
 
-ADD_LIBRARY(ini STATIC
+ADD_LIBRARY(olm_ini STATIC
     ConvertUTF.c
 )
 
 target_link_libraries(
-     ini
+     olm_ini
 )
 

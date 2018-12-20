@@ -1,18 +1,18 @@
 IF(WIN32)
-    ADD_LIBRARY(os STATIC
+    ADD_LIBRARY(olm_os STATIC
         os.c
         os-win.c)
 ELSE(WIN32)
-    ADD_LIBRARY(os STATIC
+    ADD_LIBRARY(olm_os STATIC
         os.c
         os-linux.c
         network_id.c)
 ENDIF(WIN32)
 
 target_link_libraries(
-     os
-     base
+     olm_os
+     olm_base
      ${EXTERNAL_LIBS}
 )
 
-install(TARGETS os ARCHIVE DESTINATION lib)
+install(TARGETS olm_os ARCHIVE DESTINATION lib)

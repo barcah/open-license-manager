@@ -6,7 +6,7 @@ add_executable(
 
 target_link_libraries(
  license_reader_test
- license++_static
+ olm_licensepp_static
  ${Boost_LIBRARIES}
 )
 
