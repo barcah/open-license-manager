@@ -9,7 +9,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <cstring>
-#include "api/licensepp.h"
+#include "api/licensecc.h"
 #include "LicenseReader.h"
 
 using namespace std;

@@ -5,7 +5,7 @@
  * This include file is the public api di License++
  * You should include this file if your software don't plan to use
  * the part of the library dealing with features.
- * Otherwise licensepp-features.h should be included.
+ * Otherwise licensecc-features.h should be included.
  */
 #ifdef __cplusplus
 extern "C" {
@@ -29,7 +29,7 @@ extern "C" {
 #define PROPRIETARY_DATA_SIZE 16
 
 #define LICENESE_INT_VERSION 100
-#define LICENSEPP_VERSION "1.0.0"
+#define LICENSECC_VERSION "1.0.0"
 
 typedef enum {
 	LICENSE_OK = 0, 						//OK

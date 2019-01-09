@@ -87,7 +87,7 @@ license ERROR :
     license file not found
 the pc signature is :
     Jaaa-aaaa-MG9F-ZhBB
-$ ../install/tools/olm_license_generator example -s Jaaa-aaaa-MG9F-ZhBB -o example.lic 
+$ ../install/tools/licensecc_license_generator example -s Jaaa-aaaa-MG9F-ZhBB -o example.lic 
 $ ./example
 licence OK
 ```

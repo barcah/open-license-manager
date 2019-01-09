@@ -1,7 +1,7 @@
-#ifndef LICENSEPP_FEATURES_H_
-#define LICENSEPP_FEATURES_H_
+#ifndef LICENSECC_FEATURES_H_
+#define LICENSECC_FEATURES_H_
 
-#include "licensepp.h"
+#include "licensecc.h"
 #ifdef __cplusplus
 extern "C" {
 #endif

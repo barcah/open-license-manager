@@ -7,7 +7,7 @@ cmake_minimum_required(VERSION 2.8.11 FATAL_ERROR)
 #version variables, major and minor must be 1 character only
 SET(LICENSECC_MAJOR_VERSION 1)
 SET(LICENSECC_MINOR_VERSION 0)
-SET(LICENSECC_PATCH_VERSION 1 CACHE STRING "License++ patch version string")
+SET(LICENSECC_PATCH_VERSION 2 CACHE STRING "License++ patch version string")
 SET(LICENSECC_INT_VERSION "${LICENSECC_MAJOR_VERSION}${LICENSECC_MINOR_VERSION}${LICENSECC_PATCH_VERSION}")
 SET(LICENSECC_VERSION "${LICENSECC_MAJOR_VERSION}.${LICENSECC_MINOR_VERSION}.${LICENSECC_PATCH_VERSION}")
 SET(LICENSECC_SHORT_LICENSE "BSD Software License")
@@ -16,7 +16,7 @@ SET(CMAKE_DISABLE_SOURCE_CHANGES ON)
 SET(CMAKE_DISABLE_IN_SOURCE_BUILD ON)
 SET(CMAKE_VERBOSE_MAKEFILE ON CACHE BOOL "CMake verbose" FORCE)
 
-project (olm C CXX)
+project (licensecc C CXX)
 SET(LIBRARY_OUTPUT_PATH ${PROJECT_BINARY_DIR}/lib)
 SET(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/modules/")
 
@@ -108,6 +108,23 @@ configure_file (
 include_directories(${CMAKE_BINARY_DIR})
 
 add_subdirectory(src)
+
+set(PACKAGE_INIT "
+macro(set_and_check)
+  set(\${ARGV})
+endmacro()
+")
+
+set(PACKAGE_INSTALL_INCLUDE_DIR "${CMAKE_INSTALL_DIR}/include")
+set(PACKAGE_INSTALL_LIBRARIES_DIR "${CMAKE_INSTALL_DIR}/lib")
+
+list(APPEND PACKAGE_INSTALL_LIBRARIES "licensecc_static licensecc_os licensecc_base licensecc_tools_base")
+
+configure_file (
+	"${CMAKE_SOURCE_DIR}/licensecc-config.cmake.in" 
+	"${CMAKE_CURRENT_BINARY_DIR}/licensecc-config.cmake" 
+	@ONLY
+)
 
 INCLUDE(CTest)
 ENABLE_TESTING()

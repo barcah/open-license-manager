@@ -5,9 +5,9 @@ add_executable(
 #add_dependencies( license_reader_test boost_filesystem )
 
 target_link_libraries(
- license_reader_test
- olm_licensepp_static
- ${Boost_LIBRARIES}
+	license_reader_test
+ 	licensecc_static
+ 	${Boost_LIBRARIES}
 )
 
 #SET_TARGET_PROPERTIES(license_reader_test PROPERTIES LINK_SEARCH_START_STATIC ON)

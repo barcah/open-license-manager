@@ -9,7 +9,7 @@ if(MSVC)
 SET(CMAKE_FIND_LIBRARY_SUFFIXES .lib )
 else(MSVC)
 set(CMAKE_FIND_LIBRARY_SUFFIXES .a .so)
-set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -s -Wl,--exclude-libs,olm_liblicensepp_static.a")
+set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -s -Wl,--exclude-libs,licensecc_static.a")
 find_package(OpenSSL REQUIRED)
 endif(MSVC)
 
@@ -17,7 +17,7 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR})
 
 add_executable(example example.cpp)
 
-target_link_libraries(example olm_licensepp_static olm_os olm_base olm_tools_base)
+target_link_libraries(example licensecc_static licensecc_os licensecc_base licensecc_tools_base)
 
 if(NOT MSVC)
 target_link_libraries(example crypto pthread dl z)

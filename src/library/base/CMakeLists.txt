@@ -1,9 +1,9 @@
-ADD_LIBRARY(olm_base STATIC
+ADD_LIBRARY(licensecc_base STATIC
     EventRegistry.cpp
     StringUtils.cpp
     logger.c
 )
 
-add_dependencies( olm_base public_key )
+add_dependencies( licensecc_base public_key )
 
-install(TARGETS olm_base ARCHIVE DESTINATION lib)
+install(TARGETS licensecc_base ARCHIVE DESTINATION lib)

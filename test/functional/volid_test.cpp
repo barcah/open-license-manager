@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <cstring>
 #include "../../src/tools/license-generator/license-generator.h"
-#include "../../src/library/api/licensepp.h"
+#include "../../src/library/api/licensecc.h"
 #include <build_properties.h>
 #include <boost/filesystem.hpp>
 #include "../../src/library/ini/SimpleIni.h"

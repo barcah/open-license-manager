@@ -1,11 +1,11 @@
-#ifndef LICENSEPP_H_
-#define LICENSEPP_H_
+#ifndef LICENSECC_H_
+#define LICENSECC_H_
 
 /*
  * This include file is the public api di License++
  * You should include this file if your software don't plan to use
  * the part of the library dealing with features.
- * Otherwise licensepp-features.h should be included.
+ * Otherwise licensecc-features.h should be included.
  */
 #ifdef __cplusplus
 extern "C" {
