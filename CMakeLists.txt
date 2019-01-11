@@ -109,23 +109,6 @@ include_directories(${CMAKE_BINARY_DIR})
 
 add_subdirectory(src)
 
-set(PACKAGE_INIT "
-macro(set_and_check)
-  set(\${ARGV})
-endmacro()
-")
-
-set(PACKAGE_INSTALL_INCLUDE_DIR "${CMAKE_INSTALL_DIR}/include")
-set(PACKAGE_INSTALL_LIBRARIES_DIR "${CMAKE_INSTALL_DIR}/lib")
-
-list(APPEND PACKAGE_INSTALL_LIBRARIES "licensecc_static licensecc_os licensecc_base licensecc_tools_base")
-
-configure_file (
-	"${CMAKE_SOURCE_DIR}/licensecc-config.cmake.in" 
-	"${CMAKE_CURRENT_BINARY_DIR}/licensecc-config.cmake" 
-	@ONLY
-)
-
 INCLUDE(CTest)
 ENABLE_TESTING()
 IF(BUILD_TESTING)
