@@ -19,3 +19,4 @@ target_link_libraries(
 )
 
 install(TARGETS licensecc_tools_base ARCHIVE DESTINATION lib)
+install(FILES CryptoHelper.h DESTINATION include/licensecc/crypto)
